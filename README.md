@@ -1,5 +1,5 @@
 # vimage
-智能生成图片服务提供商
+自动同步微信公众号文章列表
 
 ## 系统要求：
 - Python 3.6+、Flask 1.0+、virtualenv3.5
