@@ -61,7 +61,7 @@ class Config:
     QINIU_BUCKET_NAME = 'frking'
 
     # 日志
-    ERROR_LOG = 'logs/vig-error.log'
+    ERROR_LOG = 'logs/wxs-error.log'
 
     # pagination
     MAX_SEARCH_RESULTS = 50
@@ -148,9 +148,6 @@ class DevelopmentConfig(Config):
     # mysql+pymysql://<username>:<password>@<host>/<dbname>[?<options>]
     SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://root:yangfei@localhost/wxspider_dev'
 
-    MAKE_IMAGE_FONTS_PATH = '../mix-wxspider/public/fonts/'
-    MAKE_VIDEO_AUDIO_PATH = '../mix-wxspider/public/audio/'
-
 
 class TestingConfig(Config):
     TESTING = True
@@ -175,11 +172,9 @@ class TestingConfig(Config):
     SQLALCHEMY_ECHO = False
     SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://fxadmin:fxdb@1801?!@10.10.39.2/fximage?charset=utf8'
 
-    ERROR_LOG = '/var/log/wx-spider/wxspider-error.log'
+    ERROR_LOG = '/var/log/wx-spider/wxs-error.log'
 
     UPLOADED_PHOTOS_DEST = '/opt/project/wx-spider/uploads'
-
-    MAKE_IMAGE_FONTS_PATH = '/opt/project/wx-spider/public/fonts/'
 
 
 class ProductionConfig(Config):
@@ -224,11 +219,9 @@ class ProductionConfig(Config):
     SQLALCHEMY_ECHO = False
     SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://root:Mix@MySQL#1808!@10.16.0.4/fximage?charset=utf8'
 
-    ERROR_LOG = '/var/log/wx-spider/aim-error.log'
+    ERROR_LOG = '/var/log/wx-spider/wxs-error.log'
 
     UPLOADED_PHOTOS_DEST = '/opt/project/wx-spider/uploads'
-
-    MAKE_IMAGE_FONTS_PATH = '/opt/project/wx-spider/public/fonts/'
 
     # API
     LX_API_HOST = 'https://wxapi.lexivip.com'

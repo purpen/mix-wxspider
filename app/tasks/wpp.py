@@ -27,7 +27,7 @@ def wpp_refresh_spider():
     result = requests.post(url, json=payload, headers=headers)
     result = Dictate(result.json())
     if result.status.code and result.status.code != 200:
-        current_app.logger.warn('Wpp refresh code: %d' % result.get('errcode'))
+        current_app.logger.warn('Wpp refresh code: %s' % result.status.message)
         return FAIL
 
     current_app.logger.debug(result)
@@ -186,7 +186,7 @@ def wpp_spider_articles(master_uid, wpp_id, wpp_name, last_spider_at=0):
     result = requests.post(url, json=payload, headers=headers)
     result = Dictate(result.json())
     if result.status.code and result.status.code != 200:
-        current_app.logger.warn('Wpp spider code: %d' % result.get('errcode'))
+        current_app.logger.warn('Wpp spider code: %s' % result.status.message)
         return FAIL
 
     current_app.logger.warn('Wpp last spider time [%s]!' % last_update_at)
@@ -206,7 +206,7 @@ def wpp_add_article(master_uid, article_data):
         result = requests.post(url, json=payload, headers=headers)
         result = Dictate(result.json())
         if result.status.code and result.status.code != 200:
-            current_app.logger.warn('Wpp add code: %d' % result.get('errcode'))
+            current_app.logger.warn('Wpp add code: %s' % result.status.message)
             return FAIL
 
     except Exception as err:
